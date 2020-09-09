@@ -9,6 +9,7 @@
     "ed-grid": "^3.0.0",
     "edteam-style-guides": "^0.0.69",
     "node-sass": "^4.14.1",
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.3"

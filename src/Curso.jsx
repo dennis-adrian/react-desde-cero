@@ -1,41 +1,54 @@
 import React from "react";
-import "./styles/styles.scss";
+import PropTypes from 'prop-types';
+//==================USING props object
+// const Curso = (props) => (
+//   <article className="card">
+//     <div className="img-container s-ratio-16-9 s-radius-tr s-radius-tl">
+//       <img src={props.image} alt={props.title} />
+//     </div>
+//     <div className="card__data s-border s-radius-br s-radius-bl s-pxy-2">
+//       <h3 className="center">{props.title}</h3>
+//       <div className="s-main-center">
+//         <a
+//           className="button--ghost-alert button--tiny"
+//           href="http://dennisadrian.me"
+//         >
+//           {`$ ${props.price}`}
+//         </a>
+//       </div>
+//     </div>
+//   </article>
+// );
 
-const Curso = () => (
+//===================USING specific attributes
+const Curso = ({image, title, price}) => (
   <article className="card">
     <div className="img-container s-ratio-16-9 s-radius-tr s-radius-tl">
-      <img
-        src="https://images.pexels.com/photos/811838/pexels-photo-811838.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-        alt=""
-      />
+      <img src={image} alt={title} />
     </div>
     <div className="card__data s-border s-radius-br s-radius-bl s-pxy-2">
-      <h3 className="t5 s-mb-2 s-center">
-        Programación orientada a objetos con Go
-      </h3>
-      <div className="s-mb-2 s-main-center">
-        <div className="card__teacher s-cross-center">
-          <div className="card__avatar s-mr-1">
-            <div className="circle img-container">
-              <img
-                src="https://images.pexels.com/photos/811838/pexels-photo-811838.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-                alt=""
-              />
-            </div>
-          </div>
-          <span className="small">Alexys Lozada</span>
-        </div>
-      </div>
+      <h3 className="center">{title}</h3>
       <div className="s-main-center">
         <a
           className="button--ghost-alert button--tiny"
           href="http://dennisadrian.me"
         >
-          $ 20USD
+          {`$ ${price} USD`}
         </a>
       </div>
     </div>
   </article>
 );
+
+Curso.propTypes = {
+  title: PropTypes.string,
+  image: PropTypes.string,
+  price: PropTypes.number
+}
+Curso.defaultProps = {
+  title: "No se encontró título",
+  image: "https://images.pexels.com/photos/4406222/pexels-photo-4406222.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+  price: "--"
+}
 
 export default Curso;

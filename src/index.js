@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import App from './components/App';
 
 //-------------------------USING JS TO CREATE AN h1 ELEMENT
 //const elemento = React .createElement(componente, propiedades, hijos)

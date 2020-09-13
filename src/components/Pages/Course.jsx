@@ -1,18 +1,14 @@
-import axios from "axios";
 import React, { useState, useEffect } from "react";
+import useCourse from '../CustomHooks/useCourse.js';
 
 const Course = ({ match }) => {
     //con los Hooks, podemos tener múltiples estados para nuestra app
     //state, y setState son simplemente nombres estándar pero pueden tener cualquier nombre
-    const [course, setCourse] = useState({})
+    //const [course, setCourse] = useState({})
     //estado para los comentarios
     const [comment, setComment] = useState("Sin comentarios")
 
-    useEffect(() => {
-        axios.get(`http://my-json-server.typicode.com/dennis-adrian/json-db/courses/${match.params.id}`)
-            .then(res => setCourse(res.data))
-    }, [])
-
+    const course = useCourse(match.params.id);
 
     const myComment = e => {
         setComment(e.target.value)
